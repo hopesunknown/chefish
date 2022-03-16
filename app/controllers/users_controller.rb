@@ -7,13 +7,22 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
+    def index 
+        render json: current_user, status: :ok
+    end
+
     def show
-        render json: @current_user
+        render json: current_user, include: :dishes, except: [:created_at, :updated_at], status: :ok
+    end
+
+    def update
+        current_user.update!(user_params)
+        render json: current_user, status: :ok
     end
 
     private
 
     def user_params
-        params.permit(:username, :password)
+        params.permit(:username, :password, :password_confirmation, :address, :email, :phone)
     end
 end
