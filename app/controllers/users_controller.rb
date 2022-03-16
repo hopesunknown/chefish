@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: :create
+    # skip_before_action :authorize, only: :create
 
     def create
         user = User.create!(user_params)
@@ -7,22 +7,14 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
-    def index 
-        render json: current_user, status: :ok
-    end
-
     def show
-        render json: current_user, include: :dishes, except: [:created_at, :updated_at], status: :ok
+        render json: @current_user
     end
 
-    def update
-        current_user.update!(user_params)
-        render json: current_user, status: :ok
-    end
 
     private
 
     def user_params
-        params.permit(:username, :password, :password_confirmation, :address, :email, :phone)
+        params.permit(:username, :password, :chef, :customer)
     end
 end
