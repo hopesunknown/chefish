@@ -1,0 +1,2 @@
+class DishnamesController < ApplicationController
+end
