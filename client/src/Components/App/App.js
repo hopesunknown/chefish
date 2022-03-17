@@ -8,25 +8,43 @@ import MainContainer from '../MainContainer/MainContainer';
 function App() {
 
   const [user, setUser] = useState(null);
-  const [locationData, setLocationData] = useState([]);
+  const [yogaData, setYogaData] = useState([]);
+  const [videoData, setVideoData] = useState([]);
+  
+  
+    useEffect(() => {
+      fetch("http://localhost:4000/me").then((response) => {
+        if (response.ok) {
+          response.json().then((user) => setUser(user));
+        }
+      });
+    }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:4000/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    fetch("/locations")
-      .then((r) => r.json())
-      .then((place) => {setLocationData(place)});
-  }, []);
+    useEffect(() => {
+      fetch("http://localhost:4000/yoga_poses")
+        .then((r) => r.json())
+        .then((pose) => {setYogaData(pose)});
+    }, []);
 
   function handleLogout() {
     setUser(null);
   }
+
+  function handleUpdateItem(updatedItemObj) {
+    const editedItems = yogaData.map((item) => {
+      if (item.id === updatedItemObj.id) {
+        return updatedItemObj;
+      } else {
+        return item;
+      }
+    });
+    setYogaData(editedItems);
+  }
+
+  function handleFindVideoData(yogaVideoData){
+    setVideoData(yogaVideoData);
+  }
+ 
 
   if (!user) return <Login onLogin={setUser} />;
 
@@ -36,11 +54,14 @@ function App() {
       <Header user={user} setUser={setUser} onLogout={handleLogout} />
       <Routes>
           <Route exact path="*" element={
-            <MainContainer
-            locationData={locationData}
-            user={user} />}
-            />    
-      </Routes>
+            <MainContainer 
+              yogaData={yogaData} 
+              handleUpdateItem={handleUpdateItem} 
+              videoData={videoData} 
+              handleFindVideoData={handleFindVideoData} 
+              user={user}
+              />}/>    
+        </Routes>
     </div>
     </>
   );
