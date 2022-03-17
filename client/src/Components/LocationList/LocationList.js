@@ -1,5 +1,5 @@
 import React from 'react';
-import LocationItem from './LocationItem';
+import LocationItem from '../LocationItem/LocationItem';
 
 function LocationList({ locationData }) {
   
@@ -14,6 +14,7 @@ function LocationList({ locationData }) {
     
     return (
       <>
+      <h1>Welcome to Chefish!</h1>
       <h1>LocationList</h1>
      </> 
     )
