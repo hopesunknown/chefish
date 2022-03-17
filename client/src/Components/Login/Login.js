@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import LoginForm from "../LoginForm/LoginForm";
-import SignUpForm from "../SignUp/SignUpForm";
+import SignUpForm from "../SignUpForm/SignUpForm";
 import Button from "../Styles/Button";
 
 function Login({ onLogin }) {

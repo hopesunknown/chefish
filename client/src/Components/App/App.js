@@ -8,8 +8,8 @@ import MainContainer from '../MainContainer/MainContainer';
 function App() {
 
   const [user, setUser] = useState(null);
-  const [yogaData, setYogaData] = useState([]);
-  const [videoData, setVideoData] = useState([]);
+  const [locationData, setLocationData] = useState([]);
+  const [dishesData, setDishesData] = useState([]);
   
   
     useEffect(() => {
@@ -23,7 +23,13 @@ function App() {
     useEffect(() => {
       fetch("/locations")
         .then((r) => r.json())
-        .then((pose) => {setYogaData(pose)});
+        .then((place) => {setLocationData(place)});
+    }, []);
+
+    useEffect(() => {
+      fetch("/dishes")
+        .then((r) => r.json())
+        .then((dish) => {setDishesData(dish)});
     }, []);
 
   function handleLogout() {
@@ -55,9 +61,9 @@ function App() {
       <Routes>
           <Route exact path="*" element={
             <MainContainer 
-              yogaData={yogaData} 
+              locationData={locationData} 
               handleUpdateItem={handleUpdateItem} 
-              videoData={videoData} 
+              dishesData={dishesData} 
               handleFindVideoData={handleFindVideoData} 
               user={user}
               />}/>    
@@ -66,5 +72,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;

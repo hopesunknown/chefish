@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { Route, Routes } from "react-router-dom";
-import LocationList from '../LocationList/LocationList';
-import DishesList from '../DishesList/DishesList';
-import CommentList from '../CommentList/CommentList';
-import ShowComment from '../ShowComment/ShowComment';
+// import LocationList from '../LocationList/LocationList';
+// import DishesList from '../DishesList/DishesList';
+// import CommentList from '../CommentList/CommentList';
+// import ShowComment from '../ShowComment/ShowComment';
 
-export default function MainContainer({ yogaData, handleUpdateItem, handleFindVideoData, videoData, user }) {
+export default function MainContainer({ locationData, handleUpdateItem, handleFindVideoData, dishesData, user }) {
 
   const [clicked, setClicked] = useState(false);
-
-  console.log(yogaData)
 
   return (
     <div>
@@ -18,8 +16,8 @@ export default function MainContainer({ yogaData, handleUpdateItem, handleFindVi
               <Video 
                 clicked={clicked} 
                 setClicked={setClicked}
-                videoData={videoData}
-                yogaData={yogaData}
+                dishesData={dishesData}
+                locationData={locationData}
                 />} 
               />
           <Route exact path="/comments" element={
@@ -31,7 +29,7 @@ export default function MainContainer({ yogaData, handleUpdateItem, handleFindVi
              />
           <Route exact path="*" element={
             <YogaList 
-              yogaData={yogaData} 
+              locationData={locationData} 
               clicked={clicked} 
               setClicked={setClicked}
               handleUpdateItem={handleUpdateItem}

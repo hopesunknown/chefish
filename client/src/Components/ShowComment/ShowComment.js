@@ -5,20 +5,20 @@ import {useState, useEffect} from 'react';
 
 export default function ShowComment() {
 
-    const [currentComment, setCurrentComment] = useState('')
-    const {id} = useParams();
+    // const [currentComment, setCurrentComment] = useState('')
+    // const {id} = useParams();
 
-    useEffect(() => {
-        fetch(`/comments/${id}`)
-          .then((r) => r.json())
-          .then((c) => {
-            setCurrentComment(c)
-          });
-    }, [id]);
+    // useEffect(() => {
+    //     fetch(`/comments/${id}`)
+    //       .then((r) => r.json())
+    //       .then((c) => {
+    //         setCurrentComment(c)
+    //       });
+    // }, [id]);
 
-    console.log(currentComment)
 
   return (
-    <div className="show-comment">{currentComment.description}</div>
+      <h1>show comment</h1>
+    // <div className="show-comment">{currentComment.description}</div>
   )
 }

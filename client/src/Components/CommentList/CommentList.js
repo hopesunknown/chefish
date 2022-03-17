@@ -1,99 +1,98 @@
 import React, { useState, useEffect } from 'react';
 import CommentBubble from '../CommentBubble/CommentBubble';
 
-
-
 export default function CommentList({ user }) {
 
-    const [commentData, setCommentData] = useState([])
-    const [description, setDescription] = useState("")
-    const [dataIndex, setDataIndex] = useState(0)
-    const [showComment, setShowComment] = useState("")
+    // const [commentData, setCommentData] = useState([])
+    // const [description, setDescription] = useState("")
+    // const [dataIndex, setDataIndex] = useState(0)
+    // const [showComment, setShowComment] = useState("")
  
     
     
-    useEffect(() => {
-        fetch("/comments")
-        .then((r) => r.json())
-        .then((comments) => { setCommentData(comments) });
-    }, []);
+    // useEffect(() => {
+    //     fetch("/comments")
+    //     .then((r) => r.json())
+    //     .then((comments) => { setCommentData(comments) });
+    // }, []);
 
-    function addNewComment(newComment){
-        setCommentData((prevState) => [...prevState, newComment])
-      }
+    // function addNewComment(newComment){
+    //     setCommentData((prevState) => [...prevState, newComment])
+    //   }
 
-      function handleDeleteComment(commentToDelete){
-        const updatedComments = commentData.filter((comment) => {
-          if (comment.id !== commentToDelete.id) {
-            return comment
-          } else {
-            return null
-          }
-        });
-        setCommentData(updatedComments);
-      }
+    //   function handleDeleteComment(commentToDelete){
+    //     const updatedComments = commentData.filter((comment) => {
+    //       if (comment.id !== commentToDelete.id) {
+    //         return comment
+    //       } else {
+    //         return null
+    //       }
+    //     });
+    //     setCommentData(updatedComments);
+    //   }
 
-      function handleUpdateComment(updatedCommentObj) {
-        const editedComments = commentData.map((comment) => {
-          if (comment.id === updatedCommentObj.id) {
-            return updatedCommentObj;
-          } else {
-            return comment;
-          }
-        });
-        setCommentData(editedComments);
-      }
+    //   function handleUpdateComment(updatedCommentObj) {
+    //     const editedComments = commentData.map((comment) => {
+    //       if (comment.id === updatedCommentObj.id) {
+    //         return updatedCommentObj;
+    //       } else {
+    //         return comment;
+    //       }
+    //     });
+    //     setCommentData(editedComments);
+    //   }
 
-    function handleSubmit(e){
-        e.preventDefault();
-        const newCommentObj = {
-            description: description,
-            user_id: user.id,
-            yoga_pose_id: 1
-        }
-              fetch("/comments",{
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(newCommentObj)
-              })
-              .then(response => response.json())
-              .then((data) => addNewComment(data))  
-              setDescription("");     
-              console.log(newCommentObj); 
-      }
+    // function handleSubmit(e){
+    //     e.preventDefault();
+    //     const newCommentObj = {
+    //         description: description,
+    //         user_id: user.id,
+    //         yoga_pose_id: 1
+    //     }
+    //           fetch("/comments",{
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(newCommentObj)
+    //           })
+    //           .then(response => response.json())
+    //           .then((data) => addNewComment(data))  
+    //           setDescription("");     
+    //           console.log(newCommentObj); 
+    //   }
 
-      function handleShowComment(singleComment){
-        setShowComment(singleComment)
-      }
+    //   function handleShowComment(singleComment){
+    //     setShowComment(singleComment)
+    //   }
     
-      const commentList = [...commentData]
-      .slice(dataIndex, dataIndex + 3)
-      .map((comment) => 
-            <CommentBubble 
-              key={comment.id} 
-              id={comment.id}
-              comment={comment} 
-              handleDeleteComment={handleDeleteComment} 
-              handleUpdateComment={handleUpdateComment}
-              handleShowComment={handleShowComment}
-            />
-        ) 
+    //   const commentList = [...commentData]
+    //   .slice(dataIndex, dataIndex + 3)
+    //   .map((comment) => 
+    //         <CommentBubble 
+    //           key={comment.id} 
+    //           id={comment.id}
+    //           comment={comment} 
+    //           handleDeleteComment={handleDeleteComment} 
+    //           handleUpdateComment={handleUpdateComment}
+    //           handleShowComment={handleShowComment}
+    //         />
+    //     ) 
 
-    function handleCommentChange(e){   
-    setDescription(e.target.value)
-    }
+    // function handleCommentChange(e){   
+    // setDescription(e.target.value)
+    // }
 
-    function handleClickMore() {
-        setDataIndex((dataIndex) => (dataIndex + 3) % commentData.length);
-      }
+    // function handleClickMore() {
+    //     setDataIndex((dataIndex) => (dataIndex + 3) % commentData.length);
+    //   }
 
-    function handleClickLess() {
-      setDataIndex((dataIndex) => (dataIndex - 3) % commentData.length);
-    }
+    // function handleClickLess() {
+    //   setDataIndex((dataIndex) => (dataIndex - 3) % commentData.length);
+    // }
 
   return (
     <>
-    <div className="comment-page-title">
+    <h1>comment area</h1>
+    {/* <div className="comment-page-title">
       <p>Namaste</p>
     </div>
     <div className="comment-page-intro">
@@ -123,7 +122,7 @@ export default function CommentList({ user }) {
         onChange={handleCommentChange}
         ></input>
         <input className="submit-button" type="submit" value="Post" />
-    </form>
+    </form> */}
 
     </>
   )
