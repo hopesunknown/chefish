@@ -4,8 +4,6 @@ import Error from "../Styles/Error";
 import Input from "../Styles/Input";
 import FormField from "../Styles/FormField";
 import Label from "../Styles/Label";
-import React, { useState } from 'react';
-import { Button, Error, Input, FormField, Label } from "./styles";
 
 export default function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
