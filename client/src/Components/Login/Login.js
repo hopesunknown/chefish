@@ -4,7 +4,6 @@ import LoginForm from "../LoginForm/LoginForm";
 import SignUpForm from "../SignUp/SignUpForm";
 import Button from "../Styles/Button";
 
-
 function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
   
