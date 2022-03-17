@@ -11,7 +11,7 @@ function App() {
   const [locationData, setLocationData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/locations")
+    fetch("/locations")
       .then((r) => r.json())
       .then((place) => {setLocationData(place)});
   }, []);

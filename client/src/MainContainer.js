@@ -17,7 +17,7 @@ export default function MainContainer({ locationData }) {
               
              }/> */}
           <Route exact path="*" element={
-              <LocationList />
+              <LocationList locationData={locationData} />
             }/>
         </Routes>  
     </div>
