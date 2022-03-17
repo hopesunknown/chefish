@@ -11,7 +11,7 @@ function App() {
   const [locationData, setLocationData] = useState([]);
 
   useEffect(() => {
-    fetch("/locations")
+    fetch("http://localhost:3000/locations")
       .then((r) => r.json())
       .then((place) => {setLocationData(place)});
   }, []);
@@ -23,10 +23,9 @@ function App() {
       <Routes>
           <Route exact path="*" element={
             <MainContainer
-            locationData={locationData}
-
-            />}/>    
-        </Routes>
+            locationData={locationData} />}
+            />    
+      </Routes>
     </div>
     </>
   );
