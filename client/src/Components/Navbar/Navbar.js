@@ -19,7 +19,7 @@ export default function Navbar({ user, setUser }) {
             <button onClick={handleLogoutClick} className="logout-button">Logout</button>
             </div>
             {/* <Link exact to="/comments" className="nav-button"> Namaste </Link> */}
-            <Link exact to="*" className="nav-button"> Home </Link>
+            <Link exact to="*" className="nav-button">Home</Link>
         </div>
     </>
   )

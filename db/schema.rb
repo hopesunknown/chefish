@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_185221) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "town"
+    t.string "cuisine"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
