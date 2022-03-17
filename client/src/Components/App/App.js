@@ -13,7 +13,7 @@ function App() {
   
   
     useEffect(() => {
-      fetch("http://localhost:4000/me").then((response) => {
+      fetch("/me").then((response) => {
         if (response.ok) {
           response.json().then((user) => setUser(user));
         }
@@ -21,7 +21,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-      fetch("http://localhost:4000/yoga_poses")
+      fetch("/locations")
         .then((r) => r.json())
         .then((pose) => {setYogaData(pose)});
     }, []);
