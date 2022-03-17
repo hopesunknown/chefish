@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import EditComment from '..EditComment/EditComment';
+import EditComment from '../EditComment/EditComment';
 import { Link } from 'react-router-dom';
 
 export default function CommentBubble({ id, comment, handleDeleteComment, handleUpdateComment, handleShowComment }) {

@@ -36,19 +36,19 @@ function App() {
     setUser(null);
   }
 
-  function handleUpdateItem(updatedItemObj) {
-    const editedItems = yogaData.map((item) => {
-      if (item.id === updatedItemObj.id) {
-        return updatedItemObj;
-      } else {
-        return item;
-      }
-    });
-    setYogaData(editedItems);
-  }
+  // function handleUpdateItem(updatedItemObj) {
+  //   const editedItems = yogaData.map((item) => {
+  //     if (item.id === updatedItemObj.id) {
+  //       return updatedItemObj;
+  //     } else {
+  //       return item;
+  //     }
+  //   });
+  //   setYogaData(editedItems);
+  // }
 
   function handleFindVideoData(yogaVideoData){
-    setVideoData(yogaVideoData);
+    setDishesData(yogaVideoData);
   }
  
 
@@ -62,9 +62,9 @@ function App() {
           <Route exact path="*" element={
             <MainContainer 
               locationData={locationData} 
-              handleUpdateItem={handleUpdateItem} 
+              // handleUpdateItem={handleUpdateItem} 
               dishesData={dishesData} 
-              handleFindVideoData={handleFindVideoData} 
+              // handleFindVideoData={handleFindVideoData} 
               user={user}
               />}/>    
         </Routes>

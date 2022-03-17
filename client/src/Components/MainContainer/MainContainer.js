@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Route, Routes } from "react-router-dom";
+import YogaList from '../YogaList/YogaList';
+import Video from '../Video/Video';
 // import LocationList from '../LocationList/LocationList';
 // import DishesList from '../DishesList/DishesList';
-// import CommentList from '../CommentList/CommentList';
-// import ShowComment from '../ShowComment/ShowComment';
+import CommentList from '../CommentList/CommentList';
+import ShowComment from '../ShowComment/ShowComment';
 
 export default function MainContainer({ locationData, handleUpdateItem, handleFindVideoData, dishesData, user }) {
 
@@ -20,13 +22,8 @@ export default function MainContainer({ locationData, handleUpdateItem, handleFi
                 locationData={locationData}
                 />} 
               />
-          <Route exact path="/comments" element={
-              <CommentList user={user} />} 
-              />
-          <Route exact path="/comments/:id" element={
-               <ShowComment />
-             }
-             />
+          <Route exact path="/comments" element={<CommentList user={user} />}/>
+          <Route exact path="/comments/:id" element={<ShowComment />}/>
           <Route exact path="*" element={
             <YogaList 
               locationData={locationData} 
@@ -34,8 +31,7 @@ export default function MainContainer({ locationData, handleUpdateItem, handleFi
               setClicked={setClicked}
               handleUpdateItem={handleUpdateItem}
               handleFindVideoData={handleFindVideoData}
-              />} 
-            />
+              />}/>
         </Routes>  
     </div>
   )

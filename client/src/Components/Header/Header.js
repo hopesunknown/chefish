@@ -1,8 +1,7 @@
 import React from 'react';
-import Navbar from '..Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 
 export default function Header({ user, setUser, onLogout }) {
-
 
   return (
     <div className="header-background">
