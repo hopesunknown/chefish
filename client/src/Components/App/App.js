@@ -64,7 +64,7 @@ function App() {
               locationData={locationData} 
               // handleUpdateItem={handleUpdateItem} 
               dishesData={dishesData} 
-              // handleFindVideoData={handleFindVideoData} 
+              handleFindLocationData={handleFindLocationData} 
               user={user}
               />}/>    
         </Routes>

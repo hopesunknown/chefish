@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# puts "seeding users..."
+puts "seeding users..."
 
-# user1 = User.create(username: 'Jen', password: 'apple', chef: "true", customer: "false")
-# user2 = User.create(username: 'Shani', password: 'apple', chef: "true", customer: "false")
-# user3 = User.create(username: 'Gehrig', password: 'apple', chef: "true", customer: "false")
-# user4 = User.create(username: 'Ethan', password: 'apple', chef: "true", customer: "false")
-# user5 = User.create(username: 'Hain', password: 'apple', chef: "true", customer: "false")
-# user6 = User.create(username: 'Ilolo', password: 'apple', chef: "true", customer: "false")
-# user7 = User.create(username: 'Vivian', password: 'apple', chef: "true", customer: "false")
-# user8 = User.create(username: 'Rodney', password: 'apple', chef: "true", customer: "false")
-# user9 = User.create(username: 'Jay', password: 'apple', chef: "true", customer: "false")
-# user10 = User.create(username: 'Freddy', password: 'apple', chef: "true", customer: "false")
+user1 = User.create(username: 'Jen', password: 'apple', chef: "true", customer: "false")
+user2 = User.create(username: 'Shani', password: 'apple', chef: "true", customer: "false")
+user3 = User.create(username: 'Gehrig', password: 'apple', chef: "true", customer: "false")
+user4 = User.create(username: 'Ethan', password: 'apple', chef: "true", customer: "false")
+user5 = User.create(username: 'Hain', password: 'apple', chef: "true", customer: "false")
+user6 = User.create(username: 'Ilolo', password: 'apple', chef: "true", customer: "false")
+user7 = User.create(username: 'Vivian', password: 'apple', chef: "true", customer: "false")
+user8 = User.create(username: 'Rodney', password: 'apple', chef: "true", customer: "false")
+user9 = User.create(username: 'Jay', password: 'apple', chef: "true", customer: "false")
+user10 = User.create(username: 'Freddy', password: 'apple', chef: "true", customer: "false")
 
 puts "seeding locations..."
 
@@ -34,16 +34,16 @@ location10 = Location.create(name: "L'amour", town: "Capitol Hill", cuisine: "Fr
 
 puts "seeding dishes..."
 
-dish1 = Dish.create(dishname: "Pad Thai", price: 10, cuisine: "Thai", location_id: location1.id, user_id: 10)
-dish2 = Dish.create(dishname: "Spaghetti Carbonara", price: 12, cuisine: "Italian", location_id: location2.id, user_id: 9)
-dish3 = Dish.create(dishname: "Chirashi Sushi Bowl", price: 18, cuisine: "Japanese", location_id: location3.id, user_id: 8)
-dish4 = Dish.create(dishname: "Carne Asada Tacos (3 tacos)", price: 8, cuisine: "Mexican", location_id: location4.id, user_id: 7)
-dish5 = Dish.create(dishname: "Escargot", price: 22, cuisine: "French", location_id: location5.id, user_id: 6)
-dish6 = Dish.create(dishname: "Udon noodle bowl", price: 9, cuisine: "Japanese", location_id: location6.id, user_id: 5)
-dish7 = Dish.create(dishname: "Drunken Noodles", price: 10, cuisine: "Thai", location_id: location7.id, user_id: 4)
-dish8 = Dish.create(dishname: "Beef Lo Mein", price: 7, cuisine: "Chinese", location_id: location8.id, user_id: 3)
-dish9 = Dish.create(dishname: "Chicken Chimichanga", price: 6, cuisine: "Mexican", location_id: location9.id, user_id: 2)
-dish10 = Dish.create(dishname: "Coq Au Vin", price: 18, cuisine: "French", location_id: location10.id, user_id: 1)
+dish1 = Dish.create(dishname: "Pad Thai", price: 10, cuisine: "Thai", location_id: 1, user_id: 10)
+dish2 = Dish.create(dishname: "Spaghetti Carbonara", price: 12, cuisine: "Italian", location_id: 2, user_id: 9)
+dish3 = Dish.create(dishname: "Chirashi Sushi Bowl", price: 18, cuisine: "Japanese", location_id: 3, user_id: 8)
+dish4 = Dish.create(dishname: "Carne Asada Tacos (3 tacos)", price: 8, cuisine: "Mexican", location_id: 4, user_id: 7)
+dish5 = Dish.create(dishname: "Escargot", price: 22, cuisine: "French", location_id: 5, user_id: 6)
+dish6 = Dish.create(dishname: "Udon noodle bowl", price: 9, cuisine: "Japanese", location_id: 6, user_id: 5)
+dish7 = Dish.create(dishname: "Drunken Noodles", price: 10, cuisine: "Thai", location_id: 7, user_id: 4)
+dish8 = Dish.create(dishname: "Beef Lo Mein", price: 7, cuisine: "Chinese", location_id: 8, user_id: 3)
+dish9 = Dish.create(dishname: "Chicken Chimichanga", price: 6, cuisine: "Mexican", location_id: 9, user_id: 2)
+dish10 = Dish.create(dishname: "Coq Au Vin", price: 18, cuisine: "French", location_id: 10, user_id: 1)
 
 puts "seeding ratings..."
 

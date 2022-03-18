@@ -7,7 +7,6 @@ class CreateDishes < ActiveRecord::Migration[6.1]
       t.integer :location_id
       t.integer :user_id
 
-      t.timestamps
     end
   end
 end
