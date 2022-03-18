@@ -11,7 +11,7 @@ function Login({ onLogin }) {
     <div className="login-form">
     <Wrapper>
       <Logo>Chefish</Logo>
-      <h2 className="tagline">LoginForm</h2>
+      <h2 className="tagline">login here</h2>
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
