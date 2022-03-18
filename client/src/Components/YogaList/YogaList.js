@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import YogaItem from '../YogaItem/YogaItem';
 
-export default function YogaList({ locationData, clicked, setClicked, handleUpdateItem, handleFindVideoData, handleFindId }) {
+export default function YogaList({ locationData, clicked, setClicked, handleUpdateItem, handleFindLocationData }) {
 
   const [dataIndex, setDataIndex] = useState(0)
 
   const locationItems = [...locationData]
-    .slice(dataIndex, dataIndex + 3)
+    .slice(dataIndex, dataIndex + 6)
 
     .map((location) => 
     <YogaItem 
@@ -15,16 +15,17 @@ export default function YogaList({ locationData, clicked, setClicked, handleUpda
       handleUpdateItem={handleUpdateItem}
       clicked={clicked}
       setClicked={setClicked}
-      handleFindVideoData={handleFindVideoData}
-      handleFindId={handleFindId}
+      handleFindLocationData={handleFindLocationData}
     />
   )
 
+  console.log(locationData);
+
   function handleClickMore() {
-    setDataIndex((dataIndex) => (dataIndex + 3) % locationData.length);
+    setDataIndex((dataIndex) => (dataIndex + 6) % locationData.length);
   }
   function handleClickLess() {
-    setDataIndex((dataIndex) => (dataIndex - 3) % locationData.length);
+    setDataIndex((dataIndex) => (dataIndex - 6) % locationData.length);
   }
   
   return (
@@ -33,7 +34,7 @@ export default function YogaList({ locationData, clicked, setClicked, handleUpda
       <p>Location List.</p>
     </div>
     <div className="comment-page-intro">
-      <p>List of Locations.</p>
+      <p>List of places you can get homecooked food from. Enjoy.</p>
     </div>
     <div className="yoga-list">
       <div className="yoga-container">{locationItems}</div>

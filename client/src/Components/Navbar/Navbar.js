@@ -15,7 +15,7 @@ export default function Navbar({ user, setUser }) {
       <>
          <div className="header-background">
             <div>
-            <p className="welcome">Welcome, {user.username}!</p>
+            <p className="welcome">Welcome {user.username}</p>
             <button onClick={handleLogoutClick} className="logout-button">Logout</button>
             </div>
             {/* <Link exact to="/comments" className="nav-button"> Namaste </Link> */}

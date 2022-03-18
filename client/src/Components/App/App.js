@@ -47,7 +47,7 @@ function App() {
   //   setYogaData(editedItems);
   // }
 
-  function handleFindVideoData(yogaVideoData){
+  function handleFindLocationData(yogaVideoData){
     setDishesData(yogaVideoData);
   }
  

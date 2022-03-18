@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function YogaItem({ location, handleUpdateItem, handleFindVideoData }) {
+export default function YogaItem({ location, handleUpdateItem, handleFindLocationData }) {
 
   const { id, name, town, cuisine } = location;
 
@@ -24,7 +24,7 @@ export default function YogaItem({ location, handleUpdateItem, handleFindVideoDa
   }
   
   function handleItemClick(){
-    handleFindVideoData(location)
+    handleFindLocationData(location)
   }
 
   return (

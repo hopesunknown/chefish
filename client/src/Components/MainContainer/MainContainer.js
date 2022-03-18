@@ -7,7 +7,7 @@ import Video from '../Video/Video';
 import CommentList from '../CommentList/CommentList';
 import ShowComment from '../ShowComment/ShowComment';
 
-export default function MainContainer({ locationData, handleUpdateItem, handleFindVideoData, dishesData, user }) {
+export default function MainContainer({ locationData, handleUpdateItem, handleFindLocationData, dishesData, user }) {
 
   const [clicked, setClicked] = useState(false);
 
@@ -30,7 +30,7 @@ export default function MainContainer({ locationData, handleUpdateItem, handleFi
               clicked={clicked} 
               setClicked={setClicked}
               handleUpdateItem={handleUpdateItem}
-              handleFindVideoData={handleFindVideoData}
+              handleFindLocationData={handleFindLocationData}
               />}/>
         </Routes>  
     </div>
